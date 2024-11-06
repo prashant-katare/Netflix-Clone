@@ -1,0 +1,14 @@
+<div class="bg-[#000000] px-12 py-2 flex items-center justify-between">
+    <div>
+        <ul>
+            <img class="inline-block cursor-pointer transition-[1s]" width="110" src="/assets/Netflix-logo.png" alt="Netflix Logo">
+            @for (item of navItems; track item) {
+                <li class="inline-block text-[white] cursor-pointer m-3 hover:text-gray-400 transition-[1s]">{{item}}</li>
+              }
+        </ul>
+    </div>
+
+    <div>
+        <ul class="inline-block text-[white] cursor-pointer">Welcome Prashant</ul>
+    </div>
+</div>

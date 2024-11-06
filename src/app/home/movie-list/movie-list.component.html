@@ -1,0 +1,217 @@
+<div class="bg-black" style="width: 100%;">
+
+    <br><br><br><br>
+
+    <div class="text-[#D3D3D3] text-2xl ml-16 mb-3"><b>Top Seraches</b></div>
+
+    <div class="flex justify-center">
+        <div (click)="buttonLeft()" (mouseover)="l1=true" (mouseout)="l1=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (l1) {&#8249;}
+        </div>
+        <div #slider style="display: flex; width: 92%;">
+        @for (movie of movieList; track movie; let  i = $index) {
+            <div style="aspect-ratio: 16 / 9; flex: 0 0 18%;" (mouseover)="onHover(movie)" (mouseout)="offHover()" class="card1 text-[white] rounded w-64 mr-2">
+                <img class="rounded" style="position: relative;" [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" [alt]="'Movie-image'">
+                <div [style.display]="flag" class="p-2" style="position: relative; margin-top: -165px;">
+                    <div class="h-6"></div>
+                    
+                    <div *ngIf="movie.title === this.selectedContent || movie.name === this.selectedContent">
+                        <h2 *ngIf="movie.title" class="text-sm my-2 h-6"><b>{{movie.original_title}}</b></h2>
+                        <h2 *ngIf="movie.name" class="text-sm my-2 h-6"><b>{{movie.name}}</b></h2>
+                        <p class="my-2 text-sm">
+                        {{movie.overview.substring(0,100)}}..</p>
+                        <p class="text-green-600 text-sm"><b>Vote Average : {{movie.vote_average}}</b></p>
+                    </div>
+                    
+                </div>
+            </div>
+        }
+        </div>
+        <div (mouseover)="r1=true" (mouseout)="r1=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (r1) {&#8250;}
+        </div>
+    </div> 
+
+    <br><br>
+
+    <div class="text-[#D3D3D3] text-2xl ml-16 mb-3"><b>TV Shows</b></div>
+
+    <div class="flex justify-center">
+        <div (mouseover)="l2=true" (mouseout)="l2=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (l2) {&#8249;}
+        </div>
+        <div style="display: flex; width: 92%;">
+        @for (movie of tvShowList; track movie) {
+            <div style="aspect-ratio: 16 / 9; flex: 0 0 18%;" (mouseover)="onHover(movie)" (mouseout)="offHover()" class="card1 text-[white] rounded w-64 mr-2">
+                <img class="rounded" style="position: relative;" [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" [alt]="'Movie-image'">
+                <div [style.display]="flag" class="p-2" style="position: relative; margin-top: -165px;">
+                    <div class="h-6"></div>
+                    
+                    <div *ngIf="movie.title === this.selectedContent || movie.name === this.selectedContent">
+                        <h2 *ngIf="movie.title" class="text-sm my-2 h-6"><b>{{movie.original_title}}</b></h2>
+                        <h2 *ngIf="movie.name" class="text-sm my-2 h-6"><b>{{movie.name}}</b></h2>
+                        <p class="my-2 text-sm">
+                        {{movie.overview.substring(0,100)}}..</p>
+                        <p class="text-green-600 text-sm"><b>Vote Average : {{movie.vote_average}}</b></p>
+                    </div>
+
+                </div>
+            </div>
+        }
+        </div>
+        <div (mouseover)="r2=true" (mouseout)="r2=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (r2) {&#8250;}
+        </div>
+    </div> 
+
+    <br><br>
+
+    <div class="text-[#D3D3D3] text-2xl ml-16 mb-3"><b>Top Rated Movies</b></div>
+
+    <div class="flex justify-center">
+        <div (mouseover)="l3=true" (mouseout)="l3=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (l3) {&#8249;}
+        </div>
+        <div style="display: flex; width: 92%;">
+        @for (movie of topRatedMovies; track movie) {
+            <div style="aspect-ratio: 16 / 9; flex: 0 0 18%;" (mouseover)="onHover(movie)" (mouseout)="offHover()" class="card1 text-[white] rounded w-64 mr-2">
+                <img class="rounded" style="position: relative;" [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" [alt]="'Movie-image'">
+                <div [style.display]="flag" class="p-2" style="position: relative; margin-top: -165px;">
+                    <div class="h-6"></div>
+                    
+                    <div *ngIf="movie.title === this.selectedContent || movie.name === this.selectedContent">
+                        <h2 *ngIf="movie.title" class="text-sm my-2 h-6"><b>{{movie.original_title}}</b></h2>
+                        <h2 *ngIf="movie.name" class="text-sm my-2 h-6"><b>{{movie.name}}</b></h2>
+                        <p class="my-2 text-sm">
+                        {{movie.overview.substring(0,100)}}..</p>
+                        <p class="text-green-600 text-sm"><b>Vote Average : {{movie.vote_average}}</b></p>
+                    </div>
+
+                </div>
+            </div>
+        }
+        </div>
+        <div (mouseover)="r3=true" (mouseout)="r3=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (r3) {&#8250;}
+        </div>
+    </div> 
+
+    <br><br>
+
+    <div class="text-[#D3D3D3] text-2xl ml-16 mb-3"><b>Upcoming Movies</b></div>
+
+    <div class="flex justify-center">
+        <div (mouseover)="l4=true" (mouseout)="l4=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (l4) {&#8249;}
+        </div>
+        <div style="display: flex; width: 92%;">
+        @for (movie of upcomingMovies; track movie) {
+            <div style="aspect-ratio: 16 / 9; flex: 0 0 18%;" (mouseover)="onHover(movie)" (mouseout)="offHover()" class="card1 text-[white] rounded w-64 mr-2">
+                <img class="rounded" style="position: relative;" [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" [alt]="'Movie-image'">
+                <div [style.display]="flag" class="p-2" style="position: relative; margin-top: -165px;">
+                    <div class="h-6"></div>
+                    
+                    <div *ngIf="movie.title === this.selectedContent || movie.name === this.selectedContent">
+                        <h2 *ngIf="movie.title" class="text-sm my-2 h-6"><b>{{movie.original_title}}</b></h2>
+                        <h2 *ngIf="movie.name" class="text-sm my-2 h-6"><b>{{movie.name}}</b></h2>
+                        <p class="my-2 text-sm">
+                        {{movie.overview.substring(0,100)}}..</p>
+                        <p class="text-green-600 text-sm"><b>Vote Average : {{movie.vote_average}}</b></p>
+                    </div>
+
+                </div>
+            </div>
+        }
+        </div>
+        <div (mouseover)="r4=true" (mouseout)="r4=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (r4) {&#8250;}
+        </div>
+    </div> 
+
+    <br><br>
+
+    <div class="text-[#D3D3D3] text-2xl ml-16 mb-3"><b>Trending Movies</b></div>
+
+    <div class="flex justify-center">
+        <div (mouseover)="l5=true" (mouseout)="l5=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (l5) {&#8249;}
+        </div>
+        <div style="display: flex; width: 92%;">
+        @for (movie of trendingMovies; track movie) {
+            <div style="aspect-ratio: 16 / 9; flex: 0 0 18%;" (mouseover)="onHover(movie)" (mouseout)="offHover()" class="card1 text-[white] rounded w-64 mr-2">
+                <img class="rounded" style="position: relative;" [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" [alt]="'Movie-image'">
+                <div [style.display]="flag" class="p-2" style="position: relative; margin-top: -165px;">
+                    <div class="h-6"></div>
+                    
+                    <div *ngIf="movie.title === this.selectedContent || movie.name === this.selectedContent">
+                        <h2 *ngIf="movie.title" class="text-sm my-2 h-6"><b>{{movie.original_title}}</b></h2>
+                        <h2 *ngIf="movie.name" class="text-sm my-2 h-6"><b>{{movie.name}}</b></h2>
+                        <p class="my-2 text-sm">
+                        {{movie.overview.substring(0,100)}}..</p>
+                        <p class="text-green-600 text-sm"><b>Vote Average : {{movie.vote_average}}</b></p>
+                    </div>
+
+                </div>
+            </div>
+        }
+        </div>
+        <div (mouseover)="r5=true" (mouseout)="r5=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (r5) {&#8250;}
+        </div>
+    </div> 
+
+    <br><br>
+
+    <div class="text-[#D3D3D3] text-2xl ml-16 mb-3"><b>Trending TV Shows</b></div>
+
+    <div class="flex justify-center">
+        <div (mouseover)="l6=true" (mouseout)="l6=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (l6) {&#8249;}
+        </div>
+        <div style="display: flex; width: 92%;">
+        @for (movie of trendingTVShows; track movie) {
+            <div style="aspect-ratio: 16 / 9; flex: 0 0 18%;" (mouseover)="onHover(movie)" (mouseout)="offHover()" class="card1 text-[white] rounded w-64 mr-2">
+                <img class="rounded" style="position: relative;" [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" [alt]="'Movie-image'">
+                <div [style.display]="flag" class="p-2" style="position: relative; margin-top: -165px;">
+                    <div class="h-6"></div>
+                    
+                    <div *ngIf="movie.title === this.selectedContent || movie.name === this.selectedContent">
+                        <h2 *ngIf="movie.title" class="text-sm my-2 h-6"><b>{{movie.original_title}}</b></h2>
+                        <h2 *ngIf="movie.name" class="text-sm my-2 h-6"><b>{{movie.name}}</b></h2>
+                        <p class="my-2 text-sm">
+                        {{movie.overview.substring(0,100)}}..</p>
+                        <p class="text-green-600 text-sm"><b>Vote Average : {{movie.vote_average}}</b></p>
+                    </div>
+
+                </div>
+            </div>
+        }
+        </div>
+        <div (mouseover)="r6=true" (mouseout)="r6=false" class="text-center text-white z-10 cursor-pointer" style="font-size: 80px; background-color: rgba(0, 0, 0, 0.25); width: 4%;">
+            @if (r6) {&#8250;}
+        </div>
+    </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br>
+
+    <br><br>
+
+    <br><br>
+    
+</div>
+
+
+

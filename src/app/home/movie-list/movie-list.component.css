@@ -1,0 +1,12 @@
+.card1 {
+    transition : all 0.6s;
+}
+  
+.card1:hover {
+    transform : scale(1.6);
+}
+
+
+/* .slider {
+    transform: translateX(-200%);
+} */
