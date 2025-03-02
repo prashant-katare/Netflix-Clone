@@ -1,3 +1,7 @@
+# About
+
+An atempt to make a netflix-clone app using Angular. The backend api used to fetch data is TMDb API (Only accessable using VPN inside India).
+
 # NetflixClone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
